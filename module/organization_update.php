@@ -2,7 +2,7 @@
 include '../config/config.php';
 include '../classes/Page.php';
 include '../classes/Organization.php';
-include '../classes/Student.php';
+include '../classes/Event.php';
 
 include '../repositories/IOrganizationRepository.php';
 include '../repositories/DBRepository.php';
