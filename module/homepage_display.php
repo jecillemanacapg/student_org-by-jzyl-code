@@ -11,9 +11,9 @@ $events = EventRepository::all();
             <div class="p-3 rounded mb-3" style="background: linear-gradient(135deg, #57366f, #7b5294); color: white;">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <h6 class="mb-1 fw-bold"><?= htmlspecialchars($e->getEventName()) ?></h6>
-                        <p class="small mb-0"><?= htmlspecialchars($e->getOrgId()) ?> .
-                            <?= htmlspecialchars($e->getEventDate()) ?>
+                        <h6 class="mb-1 fw-bold"><?= htmlentities($e->getEventName()) ?></h6>
+                        <p class="small mb-0"><?= htmlentities($e->getOrgId()) ?> .
+                            <?= htmlentities($e->getEventDate()) ?>
                         </p>
                     </div>
                     <span class="badge bg-light text-dark"> <?= date('d M', strtotime($e->getEventDate())) ?></span>
