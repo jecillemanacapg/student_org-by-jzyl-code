@@ -6,26 +6,25 @@ class Admin
     protected string $password;
 
     public function __construct(
-    int $admin_id,
-    string $username,
-    string $password
-    )
-    {
-        $this‑>admin_id = $admin_id;
-        $this‑>username = $username;
-        $this‑>password = $password;
+        int $admin_id,
+        string $username,
+        string $password
+    ) {
+        $this->admin_id = $admin_id;
+        $this->username = $username;
+        $this->password = $password;
     }
 
-    public function getAdminId(): int 
-    { 
-    return $this‑>admin_id; 
-    }
-    public function getUsername(): string 
+    public function getAdminId(): int
     {
-    return $this‑>username; 
+        return $this->admin_id;
     }
-    public function getPassword(): string 
+    public function getUsername(): string
     {
-    return $this‑>password;
+        return $this->username;
+    }
+    public function getPassword(): string
+    {
+        return $this->password;
     }
 }

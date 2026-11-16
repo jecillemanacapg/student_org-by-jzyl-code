@@ -1,24 +1,24 @@
 <?php
-class Organization
+include_once __DIR__ . '/../classes/Record.php';
+class Organization extends Record
 {
     protected int $org_id;
     protected string $org_code;
     protected string $org_name;
-    protected string $org_description;
     protected int $member_count;
 
     public function __construct(
         int $org_id,
         string $org_code,
         string $org_name,
-        string $org_description,
-        int $member_count
+        int $member_count,
+        string $description
     ) {
         $this->org_id = $org_id;
         $this->org_code = $org_code;
         $this->org_name = $org_name;
-        $this->org_description = $org_description;
         $this->member_count = $member_count;
+        parent::__construct($description);
     }
     public function getOrgId(): string
     {
@@ -31,10 +31,6 @@ class Organization
     public function getOrgName(): string
     {
         return $this->org_name;
-    }
-    public function getOrgDescription(): string
-    {
-        return $this->org_description;
     }
     public function getMemberCount(): int
     {

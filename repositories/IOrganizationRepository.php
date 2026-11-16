@@ -13,4 +13,7 @@ interface IOrganizationRepository
 
     public static function delete(string $id);
 
+    public static function save(string $id);
+
+
 }

@@ -1,78 +1,43 @@
 <?php
 session_start();
+include_once __DIR__ . "/config/config.php";
+include_once __DIR__ . "/repositories/AdminRepository.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$error = "";
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    $_SESSION['organization'] = [
-        'fullname' => $_POST['fullname'],
-        'email' => $_POST['email'],
-        'gender' => $_POST['gender'],
-        'course' => $_POST['course']
-    ];
-
-    header("Location: index.php");
-    exit();
+    $admin = AdminRepository::findByUsername($username);
+    if ($admin !== null && $admin->getPassword() === $password) {
+        $_SESSION['admin_logged_in'] = true;
+        header("Location: index.php");
+        exit;
+    } else {
+        $error = "incorrect username or password!";
+    }
 }
 ?>
-
 <!DOCTYPE html>
+<html>
 
 <head>
-    <title>Registration Page</title>
-
-    <link rel="icon" type="image/x-icon" href="bcc.jpg">
-    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="login_style.css">
 </head>
 
 <body>
 
-    <header>
-        <img src="som.png" alt="Banner Image">
-    </header>
-
-    <main>
-        <section>
-            <h2>SIGN IN HERE</h2>
-
-            <form id="regForm" action="login.php" method="POST">
-
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" required>
-                    <option value="">Select</option>
-                    <option>Female</option>
-                    <option>Male</option>
-                    <option>Other</option>
-                </select>
-
-                <label for="course">Select Year Level:</label>
-                <select id="course" name="course" required>
-                    <option value="">Select</option>
-                    <option>First Year</option>
-                    <option>Second Year</option>
-                    <option>Third Year</option>
-                    <option>Fourth Year</option>
-                </select>
-
-                <button type="submit" class="submit-btn">
-                    Submit
-                </button>
-
-            </form>
-        </section>
-    </main>
-
-    <script>
-        window.onload = function () {
-            alert("Welcome to STUDENT ORGANIZATION MANAGEMENT SYSTEM");
-        };
-    </script>
-
+    <h1>ADMIN LOGIN</h1>
+    <?php if ($error): ?>
+        <p style="color:red"><?= htmlspecialchars($error) ?></p><?php endif; ?>
+    <form method="POST" action="login_admin.php">
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
 </body>
 
 </html>

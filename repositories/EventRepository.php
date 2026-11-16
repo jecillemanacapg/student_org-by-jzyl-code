@@ -1,6 +1,4 @@
 <?php
-include_once __DIR__ . '/DBRepository.php';
-include_once __DIR__ . '/IEventRepository.php';
 class EventRepository extends DBRepository implements IEventRepository
 {
 
@@ -15,8 +13,8 @@ class EventRepository extends DBRepository implements IEventRepository
                 $e['event_name'],
                 $e['event_date'],
                 $e['event_location'],
-                $e['event_description'],
                 $e['event_time'],
+                $e['event_description'],
                 $e['event_registered'],
             );
         }
@@ -28,22 +26,27 @@ class EventRepository extends DBRepository implements IEventRepository
         $sql = "INSERT INTO event (event_id, org_id, event_name, event_date, event_location, event_description,
         event_time, event_registered) ";
         $sql .= "VALUES ('" . $event['event_id'] . "', '" . $event['org_id'] . "','" . $event['event_name'] . "', '" . $event['event_date'] . "',
-        '" . $event['event_location'] . "', '" . $event['event_description'] . "', '" . $event['event_time'] . "', " . $event['event_registered'] . ");";
+        '" . $event['event_location'] . "', '" . $event['event_time'] . "', " . $event['event_registered'] . ");";
         self::connection()->query($sql);
     }
 
     public static function find(string $id): array
     {
-        return [];
+        $query = self::query("SELECT * FROM event WHERE event_id = $id");
+        return !$query ? null : array_shift($query);
     }
 
-    public static function update(array $event, string $id): array
+    public static function update(array $event, string $id): void
     {
-        return [];
+        $sql = "UPDATE event SET event_name = '" . $event['event_name'] . "', ";
+        $sql .= "event_date = '" . $event['event_date'] . "', event_location = '" . $event['event_location'] . "', ";
+        $sql .= "event_description = '" . $event['event_description'] . "', event_time = '" . $event['event_time'] . "', event_registered = " . $event['event_registered'] . " WHERE event_id = $id";
+        self::connection()->query($sql);
     }
 
     public static function delete(string $id): void
     {
-
+        $sql = "DELETE FROM event WHERE event_id = $id";
+        self::connection()->query($sql);
     }
 }

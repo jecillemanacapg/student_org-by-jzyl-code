@@ -23,8 +23,4 @@ class DBRepository
         }
         return $object_array;
     }
-
-
-
-
 }
