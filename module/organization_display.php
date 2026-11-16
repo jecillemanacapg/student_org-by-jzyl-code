@@ -47,6 +47,7 @@
                             </td>
                         </tr>
                     <?php } ?>
+                    <script src="../js/org_script.js"></script>
                 </tbody>
             </table>
         </div>
@@ -54,11 +55,3 @@
     <!--non-semantic jz -->
     </div>
 </main>
-<script>
-    function deleteData(orgId) {
-        if (confirm('do you want to delete the data?')) {
-            window.location = " module/organization_delete.php?id=" + orgId;
-        } else {
-            alert(" data cannot be deleted");
-        };
-    } </script>
