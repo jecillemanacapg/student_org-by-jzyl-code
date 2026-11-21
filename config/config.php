@@ -2,4 +2,4 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");
-define("DB_NAME", "student_org_system");
+define("DB_NAME", "system_org_system");

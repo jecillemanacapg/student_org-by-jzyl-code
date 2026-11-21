@@ -1,17 +1,15 @@
 <?php
-include __DIR__ . '/../config/config.php';
-include __DIR__ . '/../repositories/AdminRepository.php';
+include __DIR__ . '/config/config.php';
+include __DIR__ . '/repositories/AdminRepository.php';
 
 $error = "";
-
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
     $admin = AdminRepository::findByUsername($username);
-
     if ($admin != null && $admin->getPassword() === $password) {
-        header("location: ../index.php?page=organization");
+        $_SESSION['admin_logged_in'] = true;
+        header("Location: /oct20/index.php?page=organizations");
         exit;
     } else {
         $error = "incorrect username or password!";
@@ -33,7 +31,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <p style="color:red"><?= $error ?></p>
     <?php endif; ?>
 
-    <form method="POST" action="login_admin.php">
+    <form method="POST" action="">
         <label>Username:</label>
         <input type="text" name="username" required><br><br>
 

@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/../config/config.php';
+include_once 'config/config.php';
 class DBRepository
 {
     public static mixed $connection;
@@ -24,3 +24,4 @@ class DBRepository
         return $object_array;
     }
 }
+?>

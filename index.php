@@ -1,20 +1,12 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: login_admin.php");
-    exit;
-}
-?>
-<?php
 include __DIR__ . '/classes/Page.php';
 include __DIR__ . '/classes/Organization.php';
 include __DIR__ . '/classes/Event.php';
+include __DIR__ . '/repositories/IOrganizationRepository.php';
+include __DIR__ . '/repositories/OrganizationRepository.php';
+include __DIR__ . '/repositories/IEventRepository.php';
+include __DIR__ . '/repositories/EventRepository.php';
 ?>
-<?php include __DIR__ . '/repositories/IOrganizationRepository.php'; ?>
-<?php include __DIR__ . '/repositories/OrganizationRepository.php'; ?>
-
-<?php include __DIR__ . '/repositories/IEventRepository.php'; ?>
-<?php include __DIR__ . '/repositories/EventRepository.php'; ?>
 <html>
 <?php include __DIR__ . '/components/head.php'; ?>
 

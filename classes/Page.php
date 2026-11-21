@@ -16,6 +16,9 @@ class Page
             case 'organization_edit':
                 include __DIR__ . '/../module/organization_edit.php';
                 break;
+            case 'login_admin':
+                include __DIR__ . '/../module/login_admin.php';
+                break;
             default:
                 include __DIR__ . '/../module/homepage_display.php';
                 break;
