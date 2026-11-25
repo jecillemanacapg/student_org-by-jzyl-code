@@ -1,6 +1,9 @@
 <?php
 include_once __DIR__ . '/DBRepository.php';
 include_once __DIR__ . '/IOrganizationRepository.php';
+include_once __DIR__ . '/../classes/Organization.php';
+include_once __DIR__ . '/../classes/Record.php';
+
 class OrganizationRepository extends DBRepository implements IOrganizationRepository
 {
     public static function all(): array
@@ -15,7 +18,7 @@ class OrganizationRepository extends DBRepository implements IOrganizationReposi
                 $orgId,
                 $row['org_code'],
                 $row['org_name'],
-                $memberCount,
+                $row['member_count'],
                 $row['org_description']
             );
             $result[] = $org;
@@ -44,12 +47,12 @@ class OrganizationRepository extends DBRepository implements IOrganizationReposi
     }
     public static function delete(string $org_id): void
     {
-        $sql = "DELETE FROM organization WHERE org_id = " . $org_id;
+        $sql = "DELETE FROM organization WHERE org_id = '" . $org_id . "'";
         self::connection()->query($sql);
     }
     public static function save(string $org_id): void
     {
-        $sql = "UPDATE organization SET org_id = " . $org_id;
+        $sql = "UPDATE organization SET org_id = '" . $org_id . "'";
         self::connection()->query($sql);
     }
 }

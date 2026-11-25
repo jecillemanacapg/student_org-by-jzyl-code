@@ -10,8 +10,6 @@
 
             <div class="col-lg-3"></div>
             <div class="col-lg-5">
-
-
                 <form method="POST" action="module/organization_create.php">
                     <div class="form-group">
                         <label>Organization ID:</label>
@@ -37,8 +35,6 @@
                         <label>Member Count:</label>
                         <input type="number" name="member_count" class="form-control" />
                     </div>
-
-
                     <button type="submit" class="btn btn-secondary mt-4">Save</button>
                 </form>
 

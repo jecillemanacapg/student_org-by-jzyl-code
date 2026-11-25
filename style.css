@@ -79,68 +79,6 @@
         background: #eee6fa;
         color: #480b5a;
     }
-    .content {
-        min-height: 100vh;
-        padding: 20px;
-        background: #f7f2fc;
-        font-family: Arial, sans-serif;
-        color: #39304f;
-    }
-
-    .content h2 {
-        margin-bottom: 20px;
-        font-size: 26px;
-        color: #392c50;
-    }
-
-    .content h3 {
-        margin-bottom: 10px;
-    }
-
-    .content p {
-        margin-bottom: 12px;
-    }
-    .announcement-card {
-        padding: 22px;
-        margin-bottom: 16px;
-        background: white;
-        border: 1px solid #e7ddef;
-        border-radius: 10px;
-    }
-    .announcement-card h3 {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin: 0 0 18px;
-        font-size: 18px;
-        color: #39304f;
-    }
-    .announcement-card p {
-        margin-bottom: 16px;
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .announcement-card ul {
-        padding-left: 25px;
-        margin-bottom: 18px;
-        line-height: 1.8;
-    }
-
-    .priority {
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: normal;
-    }
-
-    .announcement-info {
-        margin-top: 14px;
-        font-size: 13px;
-        color: #868080;
-    }
-    @media (max-width: 600px) {
         .header {
             padding: 15px;
         }
@@ -172,7 +110,6 @@
         .content {
             padding: 20px 14px;
         }
-    }
         .navlink {
         color: #4b5563;
             padding: 0.5rem 1rem;

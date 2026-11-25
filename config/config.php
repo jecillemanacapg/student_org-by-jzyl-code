@@ -1,5 +1,5 @@
 <?php
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASSWORD", "");
-define("DB_NAME", "system_org_system");
+DEFINE("DB_HOST", "localhost");
+DEFINE("DB_USER", "root");
+DEFINE("DB_PASSWORD", "");
+DEFINE("DB_NAME", "system_org_system");

@@ -23,10 +23,9 @@ class EventRepository extends DBRepository implements IEventRepository
 
     public static function create(array $event)
     {
-        $sql = "INSERT INTO event (event_id, org_id, event_name, event_date, event_location, event_description,
-        event_time, event_registered) ";
+        $sql = "INSERT INTO event (event_id, org_id, event_name, event_date, event_location, event_time, event_description, event_registered) ";
         $sql .= "VALUES ('" . $event['event_id'] . "', '" . $event['org_id'] . "','" . $event['event_name'] . "', '" . $event['event_date'] . "',
-        '" . $event['event_location'] . "', '" . $event['event_time'] . "', " . $event['event_registered'] . ");";
+        '" . $event['event_location'] . "', '" . $event['event_time'] . "', '" . $event['event_description'] . "', " . $event['event_registered'] . ");";
         self::connection()->query($sql);
     }
 

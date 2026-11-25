@@ -13,7 +13,9 @@ class AdminRepository extends DBRepository implements IAdminRepository
             $result[] = new Admin(
                 $a['admin_id'],
                 $a['username'],
-                $a['password']
+                $a['password'],
+                $a['officer_name'],
+                $a['position']
             );
         }
         return $result;
@@ -29,7 +31,9 @@ class AdminRepository extends DBRepository implements IAdminRepository
         return new Admin(
             $row['admin_id'],
             $row['username'],
-            $row['password']
+            $row['password'],
+            $row['officer_name'],
+            $row['position']
         );
     }
 }

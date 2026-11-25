@@ -22,6 +22,6 @@ OrganizationRepository::create([
     'member_count' => $member_count,
 ]);
 
-header("location: ../index.php?page=organizations");
+header("location: ../index.php?page=organization&message=org_added");
 exit;
 ?>

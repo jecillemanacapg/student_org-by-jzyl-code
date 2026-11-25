@@ -11,5 +11,5 @@
 <?php
 $id = $_GET['id'];
 OrganizationRepository::delete($id);
-header("location: ../index.php?page=organizations");
+header("location: ../index.php?page=organization&message=org_deleted");
 ?>

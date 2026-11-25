@@ -11,5 +11,4 @@
 <?php
 $id = $_GET['id'];
 EventRepository::delete($id);
-header("location: ../index.php?page=events");
-?>
+header("location: ../index.php?page=event&message=event_deleted");

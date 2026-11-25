@@ -1,4 +1,12 @@
 <?php
-header("Location: /oct20/index.php?page=login_admin");
+session_start();
+
+// Unset all session variables
+session_unset();
+// Destroy session
+session_destroy();
+
+// Redirect back to login page
+header("Location: login_admin.php");
 exit;
 ?>

@@ -21,6 +21,6 @@ $data = [
     'member_count' => $member_count
 ];
 OrganizationRepository::update($data, $id);
-header("location: ../index.php?page=organizations");
+header("location: ../index.php?page=organization&message=org_updated");
 exit;
 ?>

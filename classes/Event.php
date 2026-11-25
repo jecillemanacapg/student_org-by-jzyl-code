@@ -1,4 +1,6 @@
 <?php
+include_once __DIR__ . '/Record.php';
+
 class Event extends Record
 {
     protected int $event_id;

@@ -1,0 +1,92 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    background:
+        radial-gradient(circle at 10% 20%, #e8d9f5, transparent 25%),
+        radial-gradient(circle at 90% 80%, #e6d8f2, transparent 25%),
+        #f7f3fc;
+    color: #382b49;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    width: 100%;
+    max-width: 450px;
+    padding: 18px;
+    margin-bottom: 15px;
+    background: #57366f;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+
+form {
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    background: white;
+    border: 1px solid #e3d9eb;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #57366f20;
+}
+
+label {
+    display: block;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    border: 1px solid #d8c9e5;
+    border-radius: 7px;
+    background: #fcfaff;
+}
+
+input:focus {
+    outline: 1px solid #57366f;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: #57366f;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #432653;
+}
+
+body > p {
+    color: red;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 24px; }
+    form { padding: 25px 20px; }
+}
