@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label>Event Description:</label>
-                        <input type="varchar(255)" name="event_description" class="form-control" />
+                        <input type="text" name="event_description" class="form-control" />
                     </div>
                     <button type="submit" class="btn btn-secondary mt-4">Save</button>
                 </form>
